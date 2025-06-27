@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6.0
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=albarea
+    volumes:
+      - mongo-data:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d
+
+  server:
+    build: ./server
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/albarea
+      - PORT=8000
+    volumes:
+      - ./server:/server
+    depends_on:
+      - mongo
+    command: npm start
+
+volumes:
+  mongo-data:
