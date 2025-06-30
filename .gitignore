@@ -1,4 +1,5 @@
 server/node_modules/
 server/coverage/
+server/cypress/downloads/
 .env
 .idea
