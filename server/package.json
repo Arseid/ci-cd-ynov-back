@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "cypress": "cypress open"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,10 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongoose": "^8.16.0"
+  },
+  "devDependencies": {
+    "cypress": "^14.5.0",
+    "jest": "^30.0.3",
+    "mockingoose": "^2.16.2"
   }
 }
