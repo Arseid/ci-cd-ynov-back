@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Article initial",
+    "content": "Ceci est mon premier article généré par script.",
+    "author": "Charlie",
+    "date": { "$date": "2023-01-01T10:00:00Z" }
+  },
+  {
+    "title": "Un autre article",
+    "content": "Un deuxième article via script.",
+    "author": "Charlie",
+    "date": { "$date": "2023-01-02T11:30:00Z" }
+  }
+]
