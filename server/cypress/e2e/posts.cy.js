@@ -1,8 +1,8 @@
 describe('Posts API', () => {
-    const API = 'http://localhost:8000/v1/posts';
+    const endpoint = '/posts';
 
     it('should return all posts', () => {
-        cy.request('GET', API).then((response) => {
+        cy.request('GET', endpoint).then((response) => {
             expect(response.status).to.eq(200);
             expect(response.body).to.be.an('array');
         });
@@ -16,7 +16,7 @@ describe('Posts API', () => {
             date: new Date().toISOString()
         };
 
-        cy.request('POST', API, post).then((response) => {
+        cy.request('POST', endpoint, post).then((response) => {
             expect(response.status).to.eq(200);
             expect(response.body).to.include(post);
         });
