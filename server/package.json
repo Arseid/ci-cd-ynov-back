@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest",
+    "test": "jest --coverage",
     "cypress": "cypress open"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
   "devDependencies": {
     "cypress": "^14.5.0",
     "jest": "^30.0.3",
-    "mockingoose": "^2.16.2"
+    "mockingoose": "^2.16.2",
+    "supertest": "^7.1.1"
   }
 }
