@@ -4,6 +4,8 @@ const v1PostRoutes = require("./v1/routes/postRoutes");
 
 const app = express();
 
+app.use(express.json());
+
 app.use('/v1/users', v1UserRoutes);
 app.use('/v1/posts', v1PostRoutes);
 
