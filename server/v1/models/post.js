@@ -5,7 +5,7 @@ const schema = Schema({
     title: String,
     content: String,
     author: String,
-    date: Date
+	date: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('Post', schema);
