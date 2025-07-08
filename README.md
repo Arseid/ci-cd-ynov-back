@@ -2,42 +2,42 @@
 
 ## Description
 
-Ce dépôt contient le backend dédié à la gestion des Posts pour l’application ReactJS du repo ci-cd-ynov.  
-Il fournit une API REST développée avec ExpressJS, connectée à une base de données MongoDB, et est conçu pour être facilement déployé et testé via Docker et des pipelines CI/CD.
+This repository contains the backend dedicated to managing Posts for the ReactJS application in the ci-cd-ynov repo.  
+It provides a REST API developed with ExpressJS, connected to a MongoDB database, and is designed to be easily deployed and tested via Docker and CI/CD pipelines.
 
-> **Attention** : Ce backend ne gère que les Posts.  
-> La gestion des Users (CRUD, authentification) est assurée par une API Flask et une base MySQL dans le dépôt principal [ci-cd-ynov](https://github.com/Arseid/ci-cd-ynov).
+> **Note:** This backend only manages Posts.  
+> User management (CRUD, authentication) is handled by a Flask API and a MySQL database in the main repository [ci-cd-ynov](https://github.com/Arseid/ci-cd-ynov).
 
-## Fonctionnalités principales
+## Main Features
 
-- API RESTful pour la gestion des Posts
-- Base de données MongoDB (avec données de seed)
-- Prêt pour le déploiement via Docker
-- Tests unitaires (Jest) et end-to-end (Cypress)
-- Intégration continue et déploiement automatisé
+- RESTful API for managing Posts
+- MongoDB database (with seed data)
+- Ready for deployment via Docker
+- Unit tests (Jest) and end-to-end tests (Cypress)
+- Continuous integration and automated deployment
 
-## Démarrage rapide
+## Quick Start
 
-### Prérequis
+### Prerequisites
 
 - Docker & Docker Compose
 
-### Lancer le projet
+### Start the project
 
 ```bash
 docker-compose up --build
 ```
 
-- L’API sera accessible sur le port 3000 (modifiable dans la config).
-- MongoDB sera initialisée avec les données de `mongo-seed/posts.json`.
+- The API will be accessible on port 3000 (configurable).
+- MongoDB will be initialized with data from `mongo-seed/posts.json`.
 
-### Documentation de l’API
+### API Documentation
 
-Une documentation Swagger est disponible à l’adresse :  
+Swagger documentation is available at:  
 `http://localhost:3000/api-docs`
 
-## Pipeline CI/CD
+## CI/CD Pipeline
 
-- **Tests automatiques** : Lancement des tests unitaires et E2E à chaque push.
-- **Build & déploiement** : Construction des images Docker et déploiement automatisé.
-- **Déclenchement en chaîne** :  À la fin de cette pipeline, celle du dépôt principal [ci-cd-ynov](https://github.com/Arseid/ci-cd-ynov) est automatiquement lancée pour assurer la cohérence de l’ensemble de l’application.
+- **Automated tests:** Unit and E2E tests are run on every push.
+- **Build & deployment:** Docker images are built and deployed automatically.
+- **Chained trigger:** At the end of this pipeline, the pipeline of the main repository [ci-cd-ynov](https://github.com/Arseid/ci-cd-ynov) is automatically triggered to ensure consistency across the entire application.
